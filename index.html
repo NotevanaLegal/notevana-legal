@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notevana</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f5f1e8;
+            --surface: #fffdf8;
+            --text: #1f2933;
+            --muted: #52606d;
+            --primary: #b4511f;
+            --accent: #2f6f5e;
+            --stroke: rgba(31, 41, 51, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(180, 81, 31, 0.14), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(47, 111, 94, 0.12), transparent 30%),
+                var(--bg);
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 20px 72px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--stroke);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 0.95;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        nav {
+            display: grid;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            border: 1px solid var(--stroke);
+            border-radius: 18px;
+            padding: 18px 20px;
+            transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+        }
+
+        a:hover {
+            transform: translateY(-1px);
+            border-color: rgba(180, 81, 31, 0.35);
+            box-shadow: 0 12px 28px rgba(31, 41, 51, 0.08);
+        }
+
+        .eyebrow {
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .link-title {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .link-copy {
+            color: var(--muted);
+            line-height: 1.55;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="card">
+            <div class="eyebrow">Notevana</div>
+            <h1>Train Smarter with Notevana</h1>
+            <p>Notevana is a focused music practice app for 6-string guitar fretboard fluency, ear training, rhythm, music theory, tuner, and metronome practice.</p>
+            <nav>
+                <a href="support.html">
+                    <span class="link-title">Support</span>
+                    <span class="link-copy">Get help, contact support, and find answers to common questions about Notevana.</span>
+                </a>
+                <a href="privacy.html">
+                    <span class="link-title">Privacy Policy</span>
+                    <span class="link-copy">How Notevana handles microphone access, device preferences, and subscription-related information.</span>
+                </a>
+                <a href="terms.html">
+                    <span class="link-title">Terms of Use</span>
+                    <span class="link-copy">Usage terms for Notevana and the Notevana Pro auto-renewable subscription.</span>
+                </a>
+            </nav>
+        </section>
+    </main>
+</body>
+</html>
