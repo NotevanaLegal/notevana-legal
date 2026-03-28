@@ -1,19 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notevana Legal</title>
+    <title>Notevana</title>
+    <meta name="description" content="Notevana helps musicians train 6-string guitar fretboard fluency, ear training, rhythm, and music theory with focused daily practice.">
     <style>
         :root {
             color-scheme: light;
-            --bg: #f5f1e8;
-            --surface: #fffdf8;
-            --text: #1f2933;
-            --muted: #52606d;
-            --primary: #b4511f;
-            --accent: #2f6f5e;
-            --stroke: rgba(31, 41, 51, 0.12);
+            --background: #f7f4ef;
+            --surface: rgba(255, 255, 255, 0.84);
+            --text: #1e1d1a;
+            --muted: #625d53;
+            --primary: #b24f2c;
+            --secondary: #146b62;
+            --stroke: rgba(30, 29, 26, 0.08);
+            --shadow: 0 18px 40px rgba(30, 29, 26, 0.08);
         }
 
         * {
@@ -22,103 +24,187 @@
 
         body {
             margin: 0;
-            font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background:
-                radial-gradient(circle at top left, rgba(180, 81, 31, 0.14), transparent 35%),
-                radial-gradient(circle at bottom right, rgba(47, 111, 94, 0.12), transparent 30%),
-                var(--bg);
+                radial-gradient(circle at top left, rgba(178, 79, 44, 0.18), transparent 34%),
+                radial-gradient(circle at top right, rgba(20, 107, 98, 0.16), transparent 28%),
+                var(--background);
+            color: var(--text);
         }
 
-        main {
-            max-width: 760px;
+        .wrap {
+            max-width: 980px;
             margin: 0 auto;
-            padding: 48px 20px 72px;
+            padding: 32px 20px 72px;
         }
 
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--stroke);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
-        }
-
-        h1 {
-            margin: 0 0 12px;
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            line-height: 0.95;
-        }
-
-        p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.65;
-        }
-
-        nav {
-            display: grid;
-            gap: 14px;
-            margin-top: 28px;
-        }
-
-        a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            background: white;
-            border: 1px solid var(--stroke);
-            border-radius: 18px;
-            padding: 18px 20px;
-            transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
-        }
-
-        a:hover {
-            transform: translateY(-1px);
-            border-color: rgba(180, 81, 31, 0.35);
-            box-shadow: 0 12px 28px rgba(31, 41, 51, 0.08);
+        .hero {
+            padding: 40px 32px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, rgba(178, 79, 44, 0.96), rgba(20, 107, 98, 0.92));
+            color: #fff;
+            box-shadow: var(--shadow);
         }
 
         .eyebrow {
-            color: var(--primary);
-            font-size: 0.78rem;
+            margin: 0 0 10px;
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            margin-bottom: 14px;
+            opacity: 0.78;
         }
 
-        .link-title {
-            display: block;
-            font-size: 1.2rem;
+        h1 {
+            margin: 0;
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 0.96;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 18px 0 0;
+            font-size: 20px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 18px;
+            border-radius: 999px;
+            text-decoration: none;
             font-weight: 700;
-            margin-bottom: 6px;
         }
 
-        .link-copy {
+        .button.primary {
+            background: #fff;
+            color: var(--text);
+        }
+
+        .button.secondary {
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .card {
+            padding: 22px 20px;
+            border-radius: 24px;
+            background: var(--surface);
+            border: 1px solid var(--stroke);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .card p,
+        .section p,
+        li {
+            margin: 0;
             color: var(--muted);
-            line-height: 1.55;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-top: 26px;
+            padding: 28px;
+            border-radius: 28px;
+            background: var(--surface);
+            border: 1px solid var(--stroke);
+            box-shadow: var(--shadow);
+        }
+
+        .section h2 {
+            margin: 0 0 14px;
+            font-size: 28px;
+        }
+
+        ul {
+            margin: 14px 0 0;
+            padding-left: 20px;
+        }
+
+        footer {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--secondary);
         }
     </style>
 </head>
 <body>
-    <main>
-        <section class="card">
-            <div class="eyebrow">Notevana</div>
-            <h1>Legal Pages</h1>
-            <p>Public policy pages for the Notevana iOS app and its subscription offering.</p>
-            <nav>
-                <a href="privacy.html">
-                    <span class="link-title">Privacy Policy</span>
-                    <span class="link-copy">How Notevana handles microphone access, device preferences, and subscription-related information.</span>
-                </a>
-                <a href="terms.html">
-                    <span class="link-title">Terms of Use</span>
-                    <span class="link-copy">Usage terms for Notevana and the Notevana Pro auto-renewable subscription.</span>
-                </a>
-            </nav>
+    <main class="wrap">
+        <section class="hero">
+            <p class="eyebrow">Music Practice App</p>
+            <h1>Notevana</h1>
+            <p>Build 6-string guitar fretboard fluency, strengthen your ear, tighten your time, and sharpen theory with focused daily drills.</p>
+            <div class="cta-row">
+                <a class="button primary" href="support.html">Support</a>
+                <a class="button secondary" href="https://notevanalegal.github.io/notevana-legal/privacy.html">Privacy Policy</a>
+                <a class="button secondary" href="https://notevanalegal.github.io/notevana-legal/terms.html">Terms of Use</a>
+            </div>
         </section>
+
+        <section class="grid" aria-label="Feature highlights">
+            <article class="card">
+                <h2>Fretboard Practice</h2>
+                <p>Train note finding on standard 6-string guitar tuning with focused string-based drills.</p>
+            </article>
+            <article class="card">
+                <h2>Ear Training</h2>
+                <p>Practice intervals, chord qualities, and chord functions with short listening workouts.</p>
+            </article>
+            <article class="card">
+                <h2>Rhythm and Theory</h2>
+                <p>Improve timing accuracy and reinforce interval and chord spelling away from the instrument.</p>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>What Notevana Includes</h2>
+            <ul>
+                <li>6-string guitar fretboard drills</li>
+                <li>Interval identification</li>
+                <li>Chord quality identification</li>
+                <li>Chord progression function training</li>
+                <li>Rhythm timing practice</li>
+                <li>Interval and chord spelling exercises</li>
+                <li>Built-in tuner and metronome</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Important Information</h2>
+            <p>Fretboard Practice is designed for standard 6-string guitar tuning (E A D G B E) and is not intended for bass. Microphone access is used for pitch detection in Fretboard Practice and Tuner.</p>
+        </section>
+
+        <footer>
+            <p>Need help? Visit the <a href="support.html">support page</a>.</p>
+        </footer>
     </main>
 </body>
 </html>
